@@ -1,16 +1,9 @@
-import Head from "next/head";
-import type { NextPage } from "next";
-import Header from "../components/Header/Header";
+import React from "react";
+import { NextPage } from "next";
+import Home from "../views/Home/Home";
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>Bejamas</title>
-      </Head>
-      <Header />
-    </div>
-  );
+const Index: NextPage = () => {
+  return <Home />;
 };
 
-export default Home;
+export default Index;
