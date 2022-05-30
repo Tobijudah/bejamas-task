@@ -8,11 +8,14 @@ type BaseProduct = {
   image: Image;
   price: number;
   category: string;
-  currency: string;
+  currency: {
+    name: string;
+    symbol: string;
+  };
   bestseller: boolean;
 };
 
-type NonFeaturedProduct = BaseProduct & {
+export type NonFeaturedProduct = BaseProduct & {
   details: null;
   featured: false;
 };
