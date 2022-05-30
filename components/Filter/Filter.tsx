@@ -1,6 +1,7 @@
 import React from "react";
+import Button from "../Button/Button";
 import { FilterProps } from "./Filter.types";
-import { FilterContainer, FilterGroup, FilterName, FilterItems, FlexItem } from "./Filter.styles";
+import { FilterContainer, FilterGroup, FilterName, FilterItems, FlexItem, FilterButtons } from "./Filter.styles";
 
 const Filter: React.FC<FilterProps> = ({ className }) => {
   return (
@@ -30,6 +31,10 @@ const Filter: React.FC<FilterProps> = ({ className }) => {
           <FlexItem>People</FlexItem>
         </FilterItems>
       </FilterGroup>
+      <FilterButtons>
+        <Button mode="light">clear</Button>
+        <Button>save</Button>
+      </FilterButtons>
     </FilterContainer>
   );
 };
