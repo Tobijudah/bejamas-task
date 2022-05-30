@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import { FilterProps } from "./Filter.types";
-import { FilterContainer, FilterGroup, FilterName, FilterItems, FlexItem, FilterButtons } from "./Filter.styles";
+import { FilterContainer, FilterGroup, FilterName, FilterItems, FlexItem, FilterButtons, FilterDivider } from "./Filter.styles";
 
 const Filter: React.FC<FilterProps> = ({ className }) => {
   return (
@@ -17,9 +17,7 @@ const Filter: React.FC<FilterProps> = ({ className }) => {
           <FlexItem>People</FlexItem>
         </FilterItems>
       </FilterGroup>
-      <svg width="268" height="2" viewBox="0 0 268 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 1H268" stroke="#C2C2C2" />
-      </svg>
+      <FilterDivider />
       <FilterGroup>
         <FilterName>Price range</FilterName>
         <FilterItems>

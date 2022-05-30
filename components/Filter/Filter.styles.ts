@@ -39,6 +39,15 @@ export const FlexItem = styled.p`
   font-weight: 400;
 `;
 
+export const FilterDivider = styled.span`
+  width: 16.75rem;
+  border: 1px solid #e4e4e4;
+
+  ${breakpoints.mobile} {
+    width: 100%;
+  }
+`;
+
 export const FilterButtons = styled.div`
   display: none;
   position: fixed;
