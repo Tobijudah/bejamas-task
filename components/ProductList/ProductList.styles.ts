@@ -73,7 +73,9 @@ export const ListSortItem = styled.div`
   gap: 0 0.625rem;
 `;
 
-export const ListFilter = styled(Filter)``;
+export const ListFilter = styled(Filter)`
+  max-width: 20%;
+`;
 
 export const ListBody = styled.div`
   display: flex;
@@ -89,6 +91,10 @@ export const ListBody = styled.div`
 export const Products = styled.div`
   display: grid;
   flex-grow: 1;
-  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
-  gap: 3.125rem;
+  grid-template-columns: repeat(auto-fill, minmax(16.25rem, 1fr));
+  gap: 5%;
+
+  ${breakpoints.mobile} {
+    gap: 3rem 0;
+  }
 `;

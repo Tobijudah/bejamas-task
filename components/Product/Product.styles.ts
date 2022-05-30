@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 25rem;
+  aspect-ratio: 0.7/1;
   overflow: hidden;
 `;
 
