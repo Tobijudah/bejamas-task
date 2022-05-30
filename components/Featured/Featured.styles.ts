@@ -115,6 +115,7 @@ export const Description = styled.p`
   color: #656565;
   font-size: 18px;
   font-weight: 400;
+  line-height: 1.5;
 `;
 
 export const Recommendations = styled.div`
