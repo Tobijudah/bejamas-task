@@ -1,10 +1,14 @@
 import React from "react";
 import Head from "next/head";
+import data from "../../data";
 import Header from "../../components/Header/Header";
+import { NonFeaturedProduct } from "../../types/types";
+import { HomeDivider, HomeWrapper } from "./Home.styles";
 import Featured from "../../components/Featured/Featured";
-import { HomeWrapper } from "./Home.styles";
+import ProductList from "../../components/ProductList/ProductList";
 
 const Home: React.FC = () => {
+  const newData = data.products.filter((product): product is NonFeaturedProduct => product.featured === false);
   return (
     <HomeWrapper>
       <Head>
@@ -18,7 +22,7 @@ const Home: React.FC = () => {
         name="Samurai King Resting"
         image={{
           alt: "image",
-          src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
+          src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
         }}
         details={{
           size: 1024,
@@ -31,19 +35,21 @@ const Home: React.FC = () => {
           recommendations: [
             {
               alt: "image",
-              src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+              src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
             },
             {
               alt: "image",
-              src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+              src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
             },
             {
               alt: "image",
-              src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+              src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
             },
           ],
         }}
       />
+      <HomeDivider />
+      <ProductList products={newData} />
     </HomeWrapper>
   );
 };
