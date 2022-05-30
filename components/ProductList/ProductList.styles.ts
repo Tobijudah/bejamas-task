@@ -1,6 +1,7 @@
 import Filter from "../Filter/Filter";
 import styled from "styled-components";
 import breakpoints from "../../styles/breakpoints";
+import FilterIcon from "../../public/svgs/filter-icon";
 
 export const Container = styled.div`
   display: flex;
@@ -45,6 +46,14 @@ export const GreyListHeading = styled.span`
 
   ${breakpoints.mobile} {
     font-size: 1.125rem;
+  }
+`;
+
+export const StyledFilterIcon = styled(FilterIcon)`
+  display: none;
+
+  ${breakpoints.mobile} {
+    display: block;
   }
 `;
 
