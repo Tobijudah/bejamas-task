@@ -18,7 +18,7 @@ const GlobalStyles = styled.createGlobalStyle`
   }
 
   body {
-    line-height: 1.5;
+    line-height: 1.1;
     -webkit-font-smoothing: antialiased;
   }
 
