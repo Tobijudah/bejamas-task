@@ -4,10 +4,10 @@ import breakpoints from "../../styles/breakpoints";
 export const HomeWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 0 5%;
+  padding: 0 5% 7.5rem;
 
   ${breakpoints.mobile} {
-    padding: 0 1rem;
+    padding: 0 1rem 6rem;
   }
 `;
 
