@@ -41,6 +41,14 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [currentPage]);
 
+  const productsList = (
+    <Products>
+      {currentProducts.map((product, index) => (
+        <Product key={index} {...product} />
+      ))}
+    </Products>
+  );
+
   return (
     <Container ref={ref}>
       {isMobile && (
@@ -58,11 +66,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
       <ListBody>
         <ListFilter />
         <ProductsContainer>
-          <Products>
-            {currentProducts.map((product, index) => (
-              <Product key={index} {...product} />
-            ))}
-          </Products>
+          {productsList}
           <Pagination currentPage={currentPage} perPage={productsPerPage} total={products.length} paginate={paginate} />
         </ProductsContainer>
       </ListBody>
