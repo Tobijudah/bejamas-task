@@ -1,22 +1,19 @@
+import Sort from "../Sort/Sort";
 import Filter from "../Filter/Filter";
 import Product from "../Product/Product";
 import MobileModal from "../Modal/MobileModal";
 import Pagination from "../Pagination/Pagination";
-import SortIcon from "../../public/svgs/sort-icon";
 import useMobileOnly from "../../hooks/useMobileOnly";
 import { ProductListProps } from "./ProductList.types";
 import React, { useEffect, useRef, useState } from "react";
-import DropdownIcon from "../../public/svgs/dropdown-icon";
 import useComponentDidUpdate from "../../hooks/useComponentDidUpdate";
 import {
   Products,
   ListBody,
-  ListSort,
   Container,
   ListFilter,
   ListHeader,
   ListHeading,
-  ListSortItem,
   GreyListHeading,
   StyledFilterIcon,
   ProductsContainer,
@@ -56,14 +53,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
           Photography <ListHeadingDivider>/</ListHeadingDivider> <GreyListHeading>Premium Photos</GreyListHeading>
         </ListHeading>
         <StyledFilterIcon onClick={() => setDisplay(true)} />
-        <ListSort>
-          <ListSortItem>
-            <SortIcon /> Sort By
-          </ListSortItem>
-          <ListSortItem>
-            Price <DropdownIcon />
-          </ListSortItem>
-        </ListSort>
+        <Sort />
       </ListHeader>
       <ListBody>
         <ListFilter />

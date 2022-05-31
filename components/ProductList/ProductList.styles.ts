@@ -57,22 +57,6 @@ export const StyledFilterIcon = styled(FilterIcon)`
   }
 `;
 
-export const ListSort = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0 1rem;
-
-  ${breakpoints.mobile} {
-    display: none;
-  }
-`;
-
-export const ListSortItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0 0.625rem;
-`;
-
 export const ListFilter = styled(Filter)`
   max-width: 20%;
 `;
