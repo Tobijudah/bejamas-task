@@ -4,6 +4,7 @@ type Image = {
 };
 
 type BaseProduct = {
+  id: number;
   name: string;
   image: Image;
   price: number;
