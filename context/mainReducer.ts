@@ -5,6 +5,9 @@ const cartReducer: CartReducer = (state, { type, data }) => {
     case "ADD_TO_CART": {
       return [...state, data];
     }
+    case "REMOVE_FROM_CART": {
+      return state.filter((product) => product.id !== data);
+    }
     case "CLEAR_CART": {
       return [];
     }

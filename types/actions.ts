@@ -10,9 +10,14 @@ type AddToCartAction = {
   data: Product;
 };
 
+type RemoveFromCartAction = {
+  type: "REMOVE_FROM_CART";
+  data: number;
+};
+
 type ClearCartAction = {
   type: "CLEAR_CART";
   data?: never;
 };
 
-export type ReducerActions = AddToCartAction | ClearCartAction | UpdateProductsAction;
+export type ReducerActions = AddToCartAction | RemoveFromCartAction | ClearCartAction | UpdateProductsAction;
