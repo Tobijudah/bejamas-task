@@ -3,7 +3,7 @@ type Image = {
   src: string;
 };
 
-type Category = "people" | "premium" | "food" | "pets" | "landmarks" | "cities" | "nature";
+export type Category = "people" | "premium" | "food" | "pets" | "landmarks" | "cities" | "nature";
 
 type BaseProduct = {
   id: number;
