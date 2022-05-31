@@ -4,6 +4,7 @@ import { ButtonProps } from "./Button.types";
 export const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
   height: 3.25rem;
+  min-height: 3.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
