@@ -5,6 +5,8 @@ import { NonFeaturedProduct, Product } from "./product";
 
 export type MainReducer = Reducer<GlobalState, ReducerActions>;
 
+export type FilteredProductsReducer = Reducer<NonFeaturedProduct[], ReducerActions>;
+
 export type ProductsReducer = Reducer<NonFeaturedProduct[], ReducerActions>;
 
 export type CartModalReducer = Reducer<boolean, ReducerActions>;

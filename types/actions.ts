@@ -1,8 +1,16 @@
-import { NonFeaturedProduct, Product } from "./product";
+import { Category, NonFeaturedProduct, Product } from "./product";
 
 type SetProductsAction = {
   type: "SET_PRODUCTS";
   data: NonFeaturedProduct[];
+};
+
+type FilterProductsByCategoriesAction = {
+  type: "FILTER_PRODUCTS_BY_CATEGORIES";
+  data: {
+    categories: Category[];
+    products: NonFeaturedProduct[];
+  };
 };
 
 type SortProductsAlphabeticallyAction = {
@@ -45,4 +53,5 @@ export type ReducerActions =
   | CloseCartModalAction
   | SortProductsAlphabeticallyAction
   | SortProductsByPriceAction
+  | FilterProductsByCategoriesAction
   | SetProductsAction;

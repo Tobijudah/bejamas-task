@@ -1,4 +1,4 @@
-import { CartModalReducer, CartReducer, MainReducer, ProductsReducer } from "../types/reducers";
+import { CartModalReducer, CartReducer, FilteredProductsReducer, MainReducer, ProductsReducer } from "../types/reducers";
 
 const cartReducer: CartReducer = (state, action) => {
   switch (action.type) {
@@ -46,6 +46,20 @@ const productsReducer: ProductsReducer = (state, action) => {
   }
 };
 
+const filteredProductsReducer: FilteredProductsReducer = (state, action) => {
+  switch (action.type) {
+    case "FILTER_PRODUCTS_BY_CATEGORIES": {
+      return action.data.categories.length > 0
+        ? action.data.products.filter((product) => {
+            return action.data.categories.some((category) => product.category === category);
+          })
+        : action.data.products;
+    }
+    default:
+      return state;
+  }
+};
+
 const cartModalReducer: CartModalReducer = (state, action) => {
   switch (action.type) {
     case "OPEN_CART_MODAL": {
@@ -59,10 +73,11 @@ const cartModalReducer: CartModalReducer = (state, action) => {
   }
 };
 
-const mainReducer: MainReducer = ({ cart, products, cartModal }, action) => ({
+const mainReducer: MainReducer = ({ cart, products, cartModal, filteredProducts }, action) => ({
   cart: cartReducer(cart, action),
   products: productsReducer(products, action),
   cartModal: cartModalReducer(cartModal, action),
+  filteredProducts: filteredProductsReducer(filteredProducts, action),
 });
 
 export default mainReducer;
