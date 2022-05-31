@@ -7,6 +7,7 @@ import useMobileOnly from "../../hooks/useMobileOnly";
 import { ProductListProps } from "./ProductList.types";
 import React, { useEffect, useRef, useState } from "react";
 import DropdownIcon from "../../public/svgs/dropdown-icon";
+import useComponentDidUpdate from "../../hooks/useComponentDidUpdate";
 import {
   Products,
   ListBody,
@@ -39,7 +40,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
     if (!isMobile) setDisplay(false);
   }, [isMobile]);
 
-  useEffect(() => {
+  useComponentDidUpdate(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [currentPage]);
 
