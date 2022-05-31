@@ -33,12 +33,6 @@ export const FilterItems = styled.div`
   gap: 2.5rem 0;
 `;
 
-export const FlexItem = styled.p`
-  color: #1d1d1d;
-  font-size: 1.375rem;
-  font-weight: 400;
-`;
-
 export const FilterDivider = styled.span`
   width: 16.75rem;
   border: 1px solid #e4e4e4;

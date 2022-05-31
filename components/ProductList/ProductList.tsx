@@ -45,7 +45,7 @@ const ProductList: React.FC<ProductListProps> = ({ categories, products }) => {
     <Container ref={ref}>
       {isMobile && (
         <MobileModal display={display} onClose={() => setDisplay(false)}>
-          <Filter />
+          <Filter categories={categories} close={() => setDisplay(false)} />
         </MobileModal>
       )}
       <ListHeader>
@@ -56,7 +56,7 @@ const ProductList: React.FC<ProductListProps> = ({ categories, products }) => {
         <Sort />
       </ListHeader>
       <ListBody>
-        <ListFilter />
+        <ListFilter categories={categories} />
         <ProductsContainer>
           <Products>
             {currentProducts.map((product) => (

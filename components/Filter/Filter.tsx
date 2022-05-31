@@ -1,39 +1,81 @@
-import React from "react";
 import Button from "../Button/Button";
+import CheckBox from "../CheckBox/CheckBox";
+import useStore from "../../hooks/useStore";
 import { FilterProps } from "./Filter.types";
-import { FilterContainer, FilterGroup, FilterName, FilterItems, FlexItem, FilterButtons, FilterDivider } from "./Filter.styles";
+import { Category } from "../../types/product";
+import React, { useEffect, useState } from "react";
+import useMobileOnly from "../../hooks/useMobileOnly";
+import { FilterContainer, FilterGroup, FilterName, FilterItems, FilterButtons, FilterDivider } from "./Filter.styles";
 
-const Filter: React.FC<FilterProps> = ({ className }) => {
+const Filter: React.FC<FilterProps> = ({ categories, className, close }) => {
+  const isMobile = useMobileOnly();
+  const { state, dispatch } = useStore();
+  const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
+
+  const handleCategoryClick = (category: Category) => {
+    const newSelectedCategories = [...selectedCategories];
+    const index = newSelectedCategories.indexOf(category);
+    if (index === -1) {
+      newSelectedCategories.push(category);
+    } else {
+      newSelectedCategories.splice(index, 1);
+    }
+    setSelectedCategories(newSelectedCategories);
+  };
+
+  const updateFilters = () => {
+    dispatch({
+      type: "FILTER_PRODUCTS_BY_CATEGORIES",
+      data: { products: state.products, categories: selectedCategories },
+    });
+    close && close();
+  };
+
+  const clearFilters = () => {
+    setSelectedCategories([]);
+    dispatch({
+      type: "FILTER_PRODUCTS_BY_CATEGORIES",
+      data: { products: state.products, categories: [] },
+    });
+    close && close();
+  };
+
+  useEffect(() => {
+    !isMobile && updateFilters();
+  }, [selectedCategories, state.products]);
+
   return (
     <FilterContainer className={className}>
       <FilterGroup>
         <FilterName>Category</FilterName>
         <FilterItems>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
+          {categories.map((category) => (
+            <CheckBox
+              key={category}
+              text={category}
+              onClick={() => handleCategoryClick(category)}
+              checked={selectedCategories.includes(category)}
+            />
+          ))}
         </FilterItems>
       </FilterGroup>
       <FilterDivider />
-      <FilterGroup>
+      {/* <FilterGroup>
         <FilterName>Price range</FilterName>
         <FilterItems>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
-          <FlexItem>People</FlexItem>
+          <FilterItem>People</FilterItem>
+          <FilterItem>People</FilterItem>
+          <FilterItem>People</FilterItem>
+          <FilterItem>People</FilterItem>
+          <FilterItem>People</FilterItem>
+          <FilterItem>People</FilterItem>
         </FilterItems>
-      </FilterGroup>
+      </FilterGroup> */}
       <FilterButtons>
-        <Button onClick={() => {}} mode="light">
+        <Button onClick={clearFilters} mode="light">
           clear
         </Button>
-        <Button onClick={() => {}}>save</Button>
+        <Button onClick={updateFilters}>save</Button>
       </FilterButtons>
     </FilterContainer>
   );
