@@ -1,4 +1,5 @@
 import React from "react";
+import useStore from "../../hooks/useStore";
 import { FeaturedProps } from "./Featured.types";
 import {
   Top,
@@ -21,19 +22,33 @@ import {
   Recommendations,
 } from "./Featured.styles";
 
-const Featured: React.FC<FeaturedProps> = ({ name, image, category, details }) => {
+const Featured: React.FC<FeaturedProps> = (props) => {
+  const { state, dispatch } = useStore();
+  const { name, image, category, details } = props;
   const { description, recommendations, size, dimensions } = details;
+  const isProductInCart = state.cart.some(({ id }) => id === props.id);
+
+  const handleClick = () => {
+    if (isProductInCart) dispatch({ type: "REMOVE_FROM_CART", data: props.id });
+    else {
+      dispatch({ type: "OPEN_CART_MODAL" });
+      dispatch({ type: "ADD_TO_CART", data: props });
+    }
+  };
+
   return (
     <Container>
       <Top>
         <Name>{name}</Name>
-        <FeaturedButton width="fit-content">add to cart</FeaturedButton>
+        <FeaturedButton width="fit-content" onClick={handleClick}>
+          {isProductInCart ? "remove from cart" : "add to cart"}
+        </FeaturedButton>
       </Top>
       <ImageContainer>
         <FeaturedImage alt={image.alt} src={image.src} />
         <FeaturedTag>Photo of the day</FeaturedTag>
       </ImageContainer>
-      <FeaturedButton>add to cart</FeaturedButton>
+      <FeaturedButton onClick={handleClick}>{isProductInCart ? "remove from cart" : "add to cart"}</FeaturedButton>
       <Bottom>
         <BottomLeft>
           <Heading>About {name}</Heading>

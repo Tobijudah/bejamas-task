@@ -1,3 +1,3 @@
-import { FeaturedProduct } from "../../types/types";
+import { FeaturedProduct } from "../../types/product";
 
-export type FeaturedProps = Omit<FeaturedProduct, "featured" | "currency">;
+export type FeaturedProps = FeaturedProduct;
