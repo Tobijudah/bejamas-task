@@ -30,8 +30,10 @@ const Filter: React.FC<FilterProps> = ({ className }) => {
         </FilterItems>
       </FilterGroup>
       <FilterButtons>
-        <Button mode="light">clear</Button>
-        <Button>save</Button>
+        <Button onClick={() => {}} mode="light">
+          clear
+        </Button>
+        <Button onClick={() => {}}>save</Button>
       </FilterButtons>
     </FilterContainer>
   );
