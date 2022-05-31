@@ -69,7 +69,7 @@ const Featured: React.FC<FeaturedProps> = (props) => {
             <DetailsItem>
               Size: {dimensions.width} x {dimensions.height} pixel
             </DetailsItem>
-            <DetailsItem>Size: {size / 1024} mb</DetailsItem>
+            <DetailsItem>Size: {size / 1000} mb</DetailsItem>
           </Details>
         </BottomRight>
       </Bottom>
