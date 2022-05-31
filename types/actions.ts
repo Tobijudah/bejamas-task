@@ -5,6 +5,16 @@ type SetProductsAction = {
   data: NonFeaturedProduct[];
 };
 
+type SortProductsAlphabeticallyAction = {
+  type: "SORT_PRODUCTS_ALPHABETICALLY";
+  order: "asc" | "desc";
+};
+
+type SortProductsByPriceAction = {
+  type: "SORT_PRODUCTS_BY_PRICE";
+  order: "asc" | "desc";
+};
+
 type OpenCartModalAction = {
   type: "OPEN_CART_MODAL";
 };
@@ -33,4 +43,6 @@ export type ReducerActions =
   | ClearCartAction
   | OpenCartModalAction
   | CloseCartModalAction
-  | SetProductsAction
+  | SortProductsAlphabeticallyAction
+  | SortProductsByPriceAction
+  | SetProductsAction;

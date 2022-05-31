@@ -21,6 +21,26 @@ const productsReducer: ProductsReducer = (state, action) => {
     case "SET_PRODUCTS": {
       return action.data;
     }
+    case "SORT_PRODUCTS_ALPHABETICALLY": {
+      return [
+        ...state.sort((a, b) => {
+          if (action.order === "asc") {
+            return a.name.localeCompare(b.name);
+          }
+          return b.name.localeCompare(a.name);
+        }),
+      ];
+    }
+    case "SORT_PRODUCTS_BY_PRICE": {
+      return [
+        ...state.sort((a, b) => {
+          if (action.order === "asc") {
+            return a.price - b.price;
+          }
+          return b.price - a.price;
+        }),
+      ];
+    }
     default:
       return state;
   }
