@@ -88,11 +88,22 @@ export const ListBody = styled.div`
   }
 `;
 
-export const Products = styled.div`
-  display: grid;
+export const ProductsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  grid-template-columns: repeat(auto-fill, minmax(16.25rem, 1fr));
-  gap: 5%;
+  gap: 6.5rem 0;
+
+  ${breakpoints.mobile} {
+    gap: 5rem 0;
+  }
+`;
+
+export const Products = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(16.25rem, calc((100% - 15%) / 3)), 1fr));
+  gap: 2rem 5%;
 
   ${breakpoints.mobile} {
     gap: 3rem 0;

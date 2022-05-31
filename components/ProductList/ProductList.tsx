@@ -51,11 +51,13 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
       </ListHeader>
       <ListBody>
         <ListFilter />
+        <ProductsContainer>
         <Products>
           {products.map((product, index) => (
             <Product key={index} {...product} />
           ))}
         </Products>
+        </ProductsContainer>
       </ListBody>
     </Container>
   );
