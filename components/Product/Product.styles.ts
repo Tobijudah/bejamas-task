@@ -35,6 +35,7 @@ export const Tag = styled.p`
 export const CartButton = styled(Button)`
   position: absolute;
   bottom: 0;
+  padding: 0;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out;
 
