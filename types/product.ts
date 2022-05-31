@@ -3,12 +3,14 @@ type Image = {
   src: string;
 };
 
+type Category = "people" | "premium" | "food" | "pets" | "landmarks" | "cities" | "nature";
+
 type BaseProduct = {
   id: number;
   name: string;
   image: Image;
   price: number;
-  category: string;
+  category: Category;
   currency: {
     name: string;
     symbol: string;
