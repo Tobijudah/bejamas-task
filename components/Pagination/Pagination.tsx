@@ -1,9 +1,14 @@
 import React from "react";
 import { PaginationProps } from "./Pagination.types";
 import { Container, Next, Previous, Text } from "./Pagination.styles";
+import useComponentDidUpdate from "../../hooks/useComponentDidUpdate";
 
 const Pagination: React.FC<PaginationProps> = ({ perPage, total, paginate, currentPage }) => {
   const noOfPages = Math.ceil(total / perPage);
+
+  useComponentDidUpdate(() => {
+    if (noOfPages < currentPage) paginate(noOfPages);
+  }, [total]);
 
   return (
     <Container>
