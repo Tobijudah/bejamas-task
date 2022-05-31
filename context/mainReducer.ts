@@ -18,7 +18,7 @@ const cartReducer: CartReducer = (state, action) => {
 
 const productsReducer: ProductsReducer = (state, action) => {
   switch (action.type) {
-    case "UPDATE_PRODUCTS": {
+    case "SET_PRODUCTS": {
       return action.data;
     }
     default:

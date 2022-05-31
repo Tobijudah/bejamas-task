@@ -11,7 +11,7 @@ const Home: React.FC<HomeProps> = ({ featuredProduct, products }) => {
   const { state, dispatch } = useStore();
 
   useEffect(() => {
-    dispatch({ type: "UPDATE_PRODUCTS", data: products });
+    dispatch({ type: "SET_PRODUCTS", data: products });
   }, []);
 
   return (

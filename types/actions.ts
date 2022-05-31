@@ -1,7 +1,7 @@
 import { NonFeaturedProduct, Product } from "./product";
 
-type UpdateProductsAction = {
-  type: "UPDATE_PRODUCTS";
+type SetProductsAction = {
+  type: "SET_PRODUCTS";
   data: NonFeaturedProduct[];
 };
 
@@ -33,4 +33,4 @@ export type ReducerActions =
   | ClearCartAction
   | OpenCartModalAction
   | CloseCartModalAction
-  | UpdateProductsAction;
+  | SetProductsAction
