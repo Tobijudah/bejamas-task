@@ -1,8 +1,9 @@
-import { Product } from "./types/types";
+import { Product } from "./types/product";
 
 const data: { products: Product[] } = {
   products: [
     {
+      id: 1,
       name: "Red Bench",
       category: "people",
       price: 3.89,
@@ -11,7 +12,7 @@ const data: { products: Product[] } = {
         symbol: "$",
       },
       image: {
-        src: "",
+        src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
         alt: "",
       },
       bestseller: true,
@@ -19,6 +20,7 @@ const data: { products: Product[] } = {
       details: null,
     },
     {
+      id: 2,
       name: "Egg Balloon",
       category: "food",
       price: 93.89,
@@ -27,7 +29,7 @@ const data: { products: Product[] } = {
         symbol: "$",
       },
       image: {
-        src: "",
+        src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
         alt: "",
       },
       bestseller: false,
@@ -35,6 +37,7 @@ const data: { products: Product[] } = {
       details: null,
     },
     {
+      id: 3,
       name: "Man",
       category: "people",
       price: 100,
@@ -43,7 +46,7 @@ const data: { products: Product[] } = {
         symbol: "$",
       },
       image: {
-        src: "",
+        src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
         alt: "",
       },
       bestseller: false,
@@ -51,6 +54,7 @@ const data: { products: Product[] } = {
       details: null,
     },
     {
+      id: 4,
       name: "Architecture",
       category: "landmarks",
       price: 101,
@@ -59,7 +63,7 @@ const data: { products: Product[] } = {
         symbol: "$",
       },
       image: {
-        src: "",
+        src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
         alt: "",
       },
       bestseller: false,
@@ -67,6 +71,7 @@ const data: { products: Product[] } = {
       details: null,
     },
     {
+      id: 5,
       name: "Samurai King Restling",
       category: "landmarks",
       price: 101,
@@ -75,7 +80,7 @@ const data: { products: Product[] } = {
         symbol: "$",
       },
       image: {
-        src: "",
+        src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
         alt: "",
       },
       bestseller: false,
@@ -89,15 +94,15 @@ const data: { products: Product[] } = {
         description: "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scram",
         recommendations: [
           {
-            src: "",
+            src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
             alt: "",
           },
           {
-            src: "",
+            src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
             alt: "",
           },
           {
-            src: "",
+            src: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&q=10",
             alt: "",
           },
         ],
