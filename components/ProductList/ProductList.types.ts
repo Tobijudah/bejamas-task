@@ -1,3 +1,6 @@
-import { NonFeaturedProduct } from "../../types/product";
+import { Category, NonFeaturedProduct } from "../../types/product";
 
-export type ProductListProps = { products: NonFeaturedProduct[] };
+export type ProductListProps = {
+  categories: Category[];
+  products: NonFeaturedProduct[];
+};

@@ -20,7 +20,7 @@ import {
   ListHeadingDivider,
 } from "./ProductList.styles";
 
-const ProductList: React.FC<ProductListProps> = ({ products }) => {
+const ProductList: React.FC<ProductListProps> = ({ categories, products }) => {
   const isMobile = useMobileOnly();
   const ref = useRef<HTMLDivElement>(null);
   const [display, setDisplay] = useState(false);

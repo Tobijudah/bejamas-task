@@ -9,6 +9,7 @@ import ProductList from "../../components/ProductList/ProductList";
 
 const Home: React.FC<HomeProps> = ({ featuredProduct, products }) => {
   const { state, dispatch } = useStore();
+  const categories = products.map((product) => product.category).filter((value, index, self) => self.indexOf(value) === index);
 
   useEffect(() => {
     dispatch({ type: "SET_PRODUCTS", data: products });
@@ -23,7 +24,7 @@ const Home: React.FC<HomeProps> = ({ featuredProduct, products }) => {
         </Head>
         <Featured {...featuredProduct} />
         <HomeDivider />
-        <ProductList products={state.products} />
+        <ProductList categories={categories} products={state.filteredProducts} />
       </HomeWrapper>
     </>
   );
