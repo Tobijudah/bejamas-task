@@ -5,7 +5,7 @@ import { Container, Gap, Select, StyledSortIcon, Title } from "./Sort.styles";
 
 const Sort: React.FC = () => {
   const { dispatch } = useStore();
-  const [sortBy, setSortBy] = React.useState("alpha");
+  const [sortBy, setSortBy] = React.useState("");
   const [order, setOrder] = useState<"asc" | "desc">("asc");
 
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -30,6 +30,9 @@ const Sort: React.FC = () => {
       </Gap>
       <Gap>
         <Select name="sort" onChange={onSelectChange} value={sortBy}>
+          <option value="" disabled>
+            Select sort
+          </option>
           <option value="alpha">Alphabetically</option>
           <option value="price">Price</option>
         </Select>

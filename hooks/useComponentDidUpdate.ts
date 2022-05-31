@@ -9,7 +9,7 @@ const useComponentDidUpdate = (effect: EffectCallback, deps?: DependencyList) =>
       return;
     }
     return effect();
-  }, [effect, ...(deps ? deps : [])]);
+  }, deps);
 
   useEffect(() => {
     return () => {
