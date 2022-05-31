@@ -5,6 +5,14 @@ type UpdateProductsAction = {
   data: NonFeaturedProduct[];
 };
 
+type OpenCartModalAction = {
+  type: "OPEN_CART_MODAL";
+};
+
+type CloseCartModalAction = {
+  type: "CLOSE_CART_MODAL";
+};
+
 type AddToCartAction = {
   type: "ADD_TO_CART";
   data: Product;
@@ -17,7 +25,12 @@ type RemoveFromCartAction = {
 
 type ClearCartAction = {
   type: "CLEAR_CART";
-  data?: never;
 };
 
-export type ReducerActions = AddToCartAction | RemoveFromCartAction | ClearCartAction | UpdateProductsAction;
+export type ReducerActions =
+  | AddToCartAction
+  | RemoveFromCartAction
+  | ClearCartAction
+  | OpenCartModalAction
+  | CloseCartModalAction
+  | UpdateProductsAction;
