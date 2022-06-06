@@ -382,7 +382,7 @@ const data: { products: Product[] } = {
       details: null,
     },
     {
-      id: 20,
+      id: 22,
       name: "Home",
       category: "premium",
       price: 100000,
